@@ -1,0 +1,21 @@
+<div class="animated fadeIn">
+    
+    <h2 class="display-4 pb-4">Resultados para <small> {{strBusqueda}} </small></h2>
+
+    <div *ngIf="Resultados.length === 0" class="alert alert-info" role="alert">
+        No se encontro resultados para {{strBusqueda}}
+    </div>
+
+    <div class="card-columns">
+
+        <div class="card shadow p-1" *ngFor="let Hero of Resultados">
+            <img src="{{ Hero.img }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{ Hero.nombre }}</h5>
+                <p class="card-text">{{ Hero.bio}}</p>
+                <p class="card-text">{{ Hero.casa }}</p>
+                <small>{{ Hero.aparicion }}</small>
+            </div>
+        </div>
+    </div>
+</div>
