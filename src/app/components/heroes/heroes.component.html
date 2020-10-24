@@ -10,6 +10,6 @@
       <p class="card-text">{{ Hero.casa }}</p>
       <small>{{ Hero.aparicion }}</small>
     </div>
-    <button (click)="Navegar(i)" class="btn btn-block" [ngClass]="{'button-outline-primary' : Hero.casa == 'DC', 'button-outline-danger' : Hero.casa == 'Marvel'}">Ver mas...</button>
+    <button (click)="Navegar(i)" class="btn btn-block" [ngClass]="{'btn-outline-primary' : Hero.casa == 'DC', 'btn-outline-danger' : Hero.casa == 'Marvel'}">Ver mas...</button>
   </div>
 </div>
