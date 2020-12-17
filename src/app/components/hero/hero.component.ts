@@ -17,7 +17,7 @@ export class HeroComponent implements OnInit {
       console.log(params);
       this.hero = this._heroService.getHero(params['id'])
       console.log(this.hero);
-      
+        
     });
   }
 

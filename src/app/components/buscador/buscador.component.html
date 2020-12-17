@@ -8,14 +8,6 @@
 
     <div class="card-columns">
 
-        <div class="card shadow p-1" *ngFor="let Hero of Resultados">
-            <img src="{{ Hero.img }}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title text-center">{{ Hero.nombre }}</h5>
-                <p class="card-text">{{ Hero.bio}}</p>
-                <p class="card-text">{{ Hero.casa }}</p>
-                <small>{{ Hero.aparicion }}</small>
-            </div>
-        </div>
+        <app-hero-card [PadreHero] = "Hero" [Index] = "Hero.index" *ngFor="let Hero of Resultados; let i = index"></app-hero-card>
     </div>
 </div>

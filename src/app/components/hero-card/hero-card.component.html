@@ -1,0 +1,15 @@
+<div class="card shadow p-1 border"
+    [ngClass]="{'border-primary' : PadreHero.casa == 'DC', 'border-danger' : PadreHero.casa == 'Marvel'}">
+    <img src="{{ PadreHero.img }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title text-center">{{ PadreHero.nombre | titlecase }}</h5>
+        <p class="card-text">{{ PadreHero.bio | slice:0:101}}...</p>
+        <p class="card-text">{{ PadreHero.casa }}</p>
+        <small>{{ PadreHero.aparicion | date: 'longDate'}}</small>
+    </div>
+
+    
+    <button (click)="Navegar()" class="btn btn-block"
+        [ngClass]="{'btn-outline-primary' : PadreHero.casa == 'DC', 'btn-outline-danger' : PadreHero.casa == 'Marvel'}">Ver
+        mas...</button>
+</div>

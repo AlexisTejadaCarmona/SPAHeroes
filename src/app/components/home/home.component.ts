@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+  // postResponse: any ='';
+  // submitted = false;
+
+  
+
+  constructor(private formBuilder: FormBuilder) {
+    this.createForm();
+   }
 
   ngOnInit(): void {
+    console.log(this.form);    
+  }
+
+  createForm(){
+    this.form = this.formBuilder.group({
+      heroe: ['', [Validators.required]],
+      aparicion: ['', [Validators.required]],
+      bio: ['', [Validators.required]],
+      casa: ['', [Validators.required]]
+    })
   }
 
 }

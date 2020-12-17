@@ -2,14 +2,5 @@
 <h2 class="display-4 text-center"><small>DC y Marvel</small></h2>
 
 <div class="card-columns animated fadeIn">
-  <div class="card shadow p-1 border" [ngClass]="{'border-primary' : Hero.casa == 'DC', 'border-danger' : Hero.casa == 'Marvel'}" *ngFor="let Hero of ArrayHeroes; let i = index">
-    <img src="{{ Hero.img }}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title text-center">{{ Hero.nombre }}</h5>
-      <p class="card-text">{{ Hero.bio.substring(0, 100) }}...</p>
-      <p class="card-text">{{ Hero.casa }}</p>
-      <small>{{ Hero.aparicion }}</small>
-    </div>
-    <button (click)="Navegar(i)" class="btn btn-block" [ngClass]="{'btn-outline-primary' : Hero.casa == 'DC', 'btn-outline-danger' : Hero.casa == 'Marvel'}">Ver mas...</button>
-  </div>
+  <app-hero-card [PadreHero] = "Hero" [Index] = "i" *ngFor="let Hero of ArrayHeroes; let i = index"></app-hero-card>  
 </div>

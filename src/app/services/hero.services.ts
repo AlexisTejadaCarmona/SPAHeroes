@@ -72,10 +72,12 @@ export class HeroService {
     console.log(termino);
     let resultados: any = [];
     termino = termino.toLowerCase();
-    for (const hero of this.Heroes) {
+    for (let i = 0; i < this.Heroes.length; i ++) {
+      let hero = this.Heroes[i];
       const nombre = hero.nombre.toLowerCase();
       if (nombre.indexOf(termino) >= 0){
-        resultados.push(hero)
+        hero.index = i;
+        resultados.push(hero);
       }
     }
     return resultados;
