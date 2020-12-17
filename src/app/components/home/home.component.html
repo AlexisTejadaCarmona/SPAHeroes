@@ -1,17 +1,15 @@
 <div class="jumbotron jumbotron-fluid animated fadeIn">
-    <div class="container">
+    <div class="container p-5">
       <h1 class="display-4">Mi primer SPA</h1>
       <p class="lead">Esta es mi primer SPA y es un APP de Heroes</p>
-    </div>
-    <hr>
-    <div class="container">
+      <hr>
       <h5 class="display-4">Añadir heroe</h5>      
-      <form autocomplete="off" [formGroup]="form">
+      <form autocomplete="off" [formGroup]="form" (ngSubmit)="enviar()">
 
         <div class="form-group row">
           <label for="" class="col-2 col-form-label">Heroe</label>
           <div class="col-8">
-            <input type="text" class="form-control" placeholder="Nombre de heroe" formControlName="heroe">
+            <input type="text" class="form-control" placeholder="Nombre de heroe" formControlName="nombre">
           </div>
         </div>
 
@@ -35,6 +33,12 @@
             <input type="text" class="form-control" placeholder="Casa" formControlName="casa">
           </div>
         </div>
+
+        <div class="form-group row">
+          <div class="col-10 input-group">
+              <button type="submit" class="btn btn-outline-info btn-block">Añadir heroe</button>
+          </div>
+      </div>
 
       </form>
     </div>

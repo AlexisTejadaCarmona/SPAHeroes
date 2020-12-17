@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
@@ -36,8 +37,9 @@ import { PasswordPipe } from './pipes/password/password.pipe';
     PasswordPipe
   ],
   imports: [
-    ReactiveFormsModule,
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'home', component: HomeComponent},

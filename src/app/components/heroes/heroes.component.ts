@@ -1,6 +1,8 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnDestroy, OnInit } from '@angular/core';
-import { HeroService } from 'src/app/services/hero.services';
+// import { HeroService } from 'src/app/services/hero.services';
 import { Router } from '@angular/router';
+import { HeroesService } from '../../services/heroes.service'
+
 
 @Component({
   selector: 'app-heroes',
@@ -9,15 +11,21 @@ import { Router } from '@angular/router';
 })
 export class HeroesComponent implements OnInit, AfterContentInit, DoCheck, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
-  constructor( private _heroService: HeroService, private _aRouter: Router) {
+  constructor( private _heroService: HeroesService, private _aRouter: Router) {
     // console.log('Constructor de la clase');
    }
 
   ArrayHeroes: any = [];
 
   ngOnInit(): void {
-    this.ArrayHeroes = this._heroService.getHeroes();
+    this._heroService.getHeroes().subscribe((data: any) => {
+      this.ArrayHeroes = data;
+      console.log(this.ArrayHeroes);      
+    });
   }
+  // ngOnInit(): void {
+  //   this.ArrayHeroes = this._heroService.getHeroes();
+  // }
 
   ngDoCheck(){
     console.log('Evento DoCheck');
